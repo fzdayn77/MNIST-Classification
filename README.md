@@ -10,4 +10,3 @@ This is a basic Deep Learning project that uses a **CNN** (**C**onvolutional **N
 - Second Pooling Layer : _Max pooling with (2x2)-Filter_
 - Two Linear Layers + activation function [ReLU](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html)
 - Output Layer : _Output function [Softmax](https://pytorch.org/docs/stable/generated/torch.nn.Softmax.html)_
-
