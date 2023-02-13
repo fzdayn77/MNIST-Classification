@@ -7,7 +7,7 @@ import numpy as np
 
 
 
-path = '/home/fzdayn77/MNIST-Classification'
+path = '/data/torchvision'
 
 train_ds = datasets.MNIST(root=path,
                           train=True,
@@ -84,6 +84,7 @@ def train_loop(dataloader, model, loss_fn, optimizer):
         if batch % 400 == 0:
             loss, current = loss.item(), batch * len(X)
             print(f"loss: {loss:>7f}  [{current:>5d}/{size:>5d}]")
+            
 
 # Testing loop
 def test_loop(dataloader, model, loss_fn):
@@ -109,7 +110,7 @@ def test_loop(dataloader, model, loss_fn):
 
 
 
-batch_size = 10
+batch_size = 20
 
 # Create data loaders
 train_dataloader = DataLoader(train_ds, batch_size=batch_size)
@@ -124,7 +125,7 @@ for X, y in test_dataloader:
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
-epochs = 10
+epochs = 30
 
 for t in range(epochs):
     print(f"Epoch {t+1}\n-------------------------------")
